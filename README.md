@@ -1,5 +1,4 @@
 # ACPL-FSL
-<<<<<<< HEAD
 
 Code to pretrain, finetune, and evaluate ACPL-FSL on standard few-shot and cross-domain (CDFSL) benchmarks.
 Paper: Semi-Supervised Few-Shot Learning via Ensemble-Based Adaptive Clustering-aware Pseudo-Labeling
@@ -40,6 +39,7 @@ pip install -r requirements.txt
 Put datasets on disk and point JSON config *_root fields to your paths.
 
 Example layout (you can use any base path as long as configs match):
+```
 data/
 ├─ mini-imagenet/
 ├─ tiered-imagenet/
@@ -50,7 +50,7 @@ data/
    ├─ ISIC/
    ├─ CropDiseases/
    └─ ChestX/
-
+```
 
 ### Download the Datasets
 
@@ -67,36 +67,33 @@ Configs live in configs/ (and configs/cdfsl/ for cross-domain).
 Ensure each config’s dataset_*_root points to your actual folders.
 
 
-# 4) Usage
+## 4) Usage
 
-## 4.1. Pretrain (single-domain example)
+### 4.1. Pretrain (single-domain example)
 ```
 python train_runner.py configs/pretrain_miniimagenet_wrn_acpl.json -sb logs/pretrain -t pretrain_miniimagenet_wrn_acpl
 ```
-## 4.2.Finetune (single-domain example)
+### 4.2.Finetune (single-domain example)
 ```
 python train_runner.py configs/finetune_miniimagenet_wrn_1_acpl.json --ckpt logs/pretrain/pretrain_mini_wrn/checkpoint_best.pth -sb logs/finetune -t miniimagenet_wrn_1_acpl
 ```
-## 4.3.Test (single-domain example)
+### 4.3.Test (single-domain example)
 ```
 python test_runner.py configs/ssl_large_miniimagenet-wrn-1_acpl.json logs/finetune/miniimagenet_wrn_1_acpl/checkpoint_best.pth -sb logs/ACPL-FSL -s ACPL -t ACPL_miniimagenet_wrn_1
 ```
-## 4.4.Cross-Domain (CDFSL)
+### 4.4.Cross-Domain (CDFSL)
 
-# finetune
+#### finetune
 ```
 python train_runner.py configs/cdfsl/finetune_cdfsl_isic_resnet10_1shot.json \
   --ckpt logs/pretrain/pretrain_miniimagenet_resnet10/checkpoint_best.pth \
   -sb logs/cdfsl -t isic_1shot
 ```
-# test
+#### test
 ```
 python test_runner.py configs/cdfsl/ssl_isic_resnet10_1shot.json \
   logs/cdfsl/isic_1shot/checkpoint_best.pth \
   -sb logs/cdfsl_results -t isic_1shot_test
-```"# ACPL-FSL" 
+```
+
 "# ACPL-FSL" 
-"# ACPL-FSL" 
-=======
-Coming soon
->>>>>>> a8a4f688f1e8eb562973f74f60efdf44333f8185
