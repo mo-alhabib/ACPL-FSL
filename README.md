@@ -1,7 +1,9 @@
 # ACPL-FSL
 
-Code to pretrain, finetune, and evaluate ACPL-FSL on standard few-shot and cross-domain (CDFSL) benchmarks.
-Paper: Semi-Supervised Few-Shot Learning via Ensemble-Based Adaptive Clustering-aware Pseudo-Labeling
+Code to **pretrain**, **finetune**, and **evaluate** ACPL-FSL on standard few-shot and cross-domain (CDFSL) benchmarks.  
+
+Paper: *Semi-Supervised Few-Shot Learning via Ensemble-Based Adaptive Clustering-aware Pseudo-Labeling*  
+
 ---
 
 ## Dependencies
@@ -95,5 +97,3 @@ python test_runner.py configs/cdfsl/ssl_isic_resnet10_1shot.json \
   logs/cdfsl/isic_1shot/checkpoint_best.pth \
   -sb logs/cdfsl_results -t isic_1shot_test
 ```
-
-"# ACPL-FSL" 
