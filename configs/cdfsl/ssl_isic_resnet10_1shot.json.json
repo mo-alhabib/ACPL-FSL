@@ -1,0 +1,41 @@
+{
+  "name": "ssl_isic_resnet10_1shot",
+  "dataset_train_root": "datasets/CDFSL/ISIC",
+  "dataset_val_root": "datasets/CDFSL/ISIC",
+  "dataset_test_root": "datasets/CDFSL/ISIC",
+
+  "model": {
+    "name": "ssl",
+    "backbone": "resnet10",
+    "transform_train": "wrn_finetune_train",
+    "transform_val": "wrn_val",
+    "transform_test": "wrn_val"
+  },
+
+  "ngpu": 1,
+  "random_seed": 42,
+  "batch_size": 1,
+
+  "train_iters": 1,
+  "test_iters": 600,
+  "tasks_per_batch": 1,
+
+  "dropout": 0.0,
+  "avgpool": true,
+  "n_classes": 64,
+  "collate_fn": "identity",
+
+  "transform_train": "wrn_finetune_train",
+  "transform_val": "wrn_val",
+  "transform_test": "wrn_val",
+
+  "dataset_test": "episodic_cdfsl_isic",
+  "classes_test": 5,
+  "support_size_test": 1,
+  "query_size_test": 15,
+  "unlabeled_size_test": 0,
+
+  "predict_method": "labelprop",
+  "distance_type": "labelprop",
+  "embedding_prop": true
+}
