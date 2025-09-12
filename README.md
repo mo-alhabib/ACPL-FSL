@@ -61,7 +61,7 @@ data/
 * [CUB](https://github.com/wyharveychen/CloserLookFewShot/tree/master/filelists/CUB)
 * [cifar-fs](https://github.com/bertinetto/r2d2#cifar-fs)
 
-Following the [FWT-repo](https://github.com/hytseng0509/CrossDomainFewShot) to download and set up all CDFSL datasets (ChestX, CropDiseases, EuroSAT, ISIC).
+Following the [BSCD-FSL repository](https://github.com/IBM/cdfsl-benchmark) to download and set up all CDFSL datasets (ChestX, CropDiseases, EuroSAT, ISIC).
 
 ## 3) Configs
 
@@ -97,3 +97,4 @@ python test_runner.py configs/cdfsl/ssl_isic_resnet10_1shot.json \
   logs/cdfsl/isic_1shot/checkpoint_best.pth \
   -sb logs/cdfsl_results -t isic_1shot_test
 ```
+"# ACPL-FSL" 
